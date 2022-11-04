@@ -7,7 +7,7 @@ console.log(printGreeting("Slimer"));
 // => Hello there, Slimer!
 
 // 2. reverseWordOrder
-// Write a function reverseWordOrder that accepts a single argument, a string. The function should return a string with the order of the words reversed. Don’t worry about punctuation.
+// Write a function reverseWordOrder that accepts a single argument, a operation. The function should return a operation with the order of the words reversed. Don’t worry about punctuation.
 
 // console.log(reverseWordOrder("Ishmael me Call"));
 // => "Call me Ishmael"
@@ -15,8 +15,8 @@ console.log(printGreeting("Slimer"));
 // console.log(reverseWordOrder("I use Lâncome on my comb"));
 // => "comb my on Lâncome use I"
 
-const reverseWordOrder = wordString => {
-    let reverseWordArr = wordString.split(' ');
+const reverseWordOrder = wordoperation => {
+    let reverseWordArr = wordoperation.split(' ');
     let reverseWord = '';
     for (let i = reverseWordArr.length - 1; i >=0; i--) {
         reverseWord += reverseWordArr[i];
@@ -30,7 +30,7 @@ console.log(reverseWordOrder('I use Lâncome on my comb'));
 // 3. calculate
 // Write a function called calculate.
 
-// This function should take three arguments: two numbers and a string.
+// This function should take three arguments: two numbers and a operation.
 
 // Name the parameters num1, num2, and operation.
 
@@ -42,12 +42,12 @@ console.log(reverseWordOrder('I use Lâncome on my comb'));
 
 
 
-const calculate = (num1, num2, string) => {
-    if (string === 'add') return num1 + num2;
-    if (string === 'sub') return num1 - num2;
-    if (string === 'mult') return num1 * num2;
-    if (string === 'div') return num1 / num2;
-    if (string === 'exp') return num1 ** num2;
+const calculate = (num1, num2, operation) => {
+    if (operation === 'add') return num1 + num2;
+    if (operation === 'sub') return num1 - num2;
+    if (operation === 'mult') return num1 * num2;
+    if (operation === 'div') return num1 / num2;
+    if (operation === 'exp') return num1 ** num2;
 }
 
 console.log(calculate(4, 3, "sub")); // => 1
@@ -66,7 +66,7 @@ console.log(calculate(4, 3, "exp"));// => 64
 
 function checkIfPandigital(nums) {
 	if (nums === 0) return false;
-	nums = nums.toString().split('');
+	nums = nums.tooperation().split('');
 	const newArr = Array.from(new Set(nums));
 	return newArr.length === nums.length;
 }
@@ -84,7 +84,7 @@ console.log(checkIfPandigital(987654321)); // true
 //     const userInput = prompt("Please enter some input");
 // userInput is now whatever the user entered.
 
-// There is another rudimentary JavaScript function for displaying text called alert(). You probably have heard of it. It takes a string as a parameter. Read about it on MDN.
+// There is another rudimentary JavaScript function for displaying text called alert(). You probably have heard of it. It takes a operation as a parameter. Read about it on MDN.
 
 // Let’s revisit printGreeting.
 
@@ -102,7 +102,7 @@ console.log(printGreeting2(userInput));
 
 // ### 6. Functions + loops: a special partnership
 
-// Write a function that, when called (“call” = “invoke”) creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space (a “white square”) or a `#` character (representing a black square). Hence, the characters should form a chessboard.
+// Write a function that, when called (“call” = “invoke”) creates a operation that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space (a “white square”) or a `#` character (representing a black square). Hence, the characters should form a chessboard.
 
 // Calling your function should print something like this:
 //  # # # #
@@ -159,13 +159,13 @@ console.log(chessboardOfAnySize(11));
 // 8. Variable number of arguments
 // Modify calculate above so that it continues to work as specified in question 3, but also lets a user get the square root of a number by specifying only 2 parameters: the number they want the square root of as the first parameter, and “sqrt” as the second parameter.
 
-const calculate2 = (string, num1, num2 = 0) => {
-	if (string === 'add') return num1 + num2;
-	if (string === 'sub') return num1 - num2;
-	if (string === 'mult') return num1 * num2;
-	if (string === 'div') return num1 / num2;
-	if (string === 'exp') return num1 ** num2;
-	if (string === 'sqrt') return Math.sqrt(num1);
+const calculate2 = (operation, num1, num2 = 0) => {
+	if (operation === 'add') return num1 + num2;
+	if (operation === 'sub') return num1 - num2;
+	if (operation === 'mult') return num1 * num2;
+	if (operation === 'div') return num1 / num2;
+	if (operation === 'exp') return num1 ** num2;
+	if (operation === 'sqrt') return Math.sqrt(num1);
 };
 
 console.log(calculate2('sqrt', 25));
