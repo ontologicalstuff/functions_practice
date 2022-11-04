@@ -53,3 +53,26 @@ const calculate = (num1, num2, string) => {
 console.log(calculate(4, 3, "sub")); // => 1
 console.log(calculate(4, 3, "exp"));// => 64
 
+// 4. pandigital numbers
+// Note: The following question is weird, we know. In interviews, you will absolutely be given coding challenges with “weird” questions and you’ll need to be very careful when reading these types of questions to make sure you understand what you’re being asked to do.
+
+// A number of length n is 1-to-n pandigital if it makes use of all the digits 1 to n exactly once.
+
+// The number 15234 is 1-to-n pandigital because it is 5 numbers long and includes 1, 2, 3, 4, and 5.
+// The number 333 is not 1-to-n pandigital.
+// The number 0 is not 1-to-n pandigital.
+// The number 987654321 is 1-to-n pandigital.
+// Write a function that checks if a number is 1-to-n pandigital.
+
+function checkIfPandigital(nums) {
+	if (nums === 0) return false;
+	nums = nums.toString().split('');
+	const newArr = Array.from(new Set(nums));
+	return newArr.length === nums.length;
+}
+
+console.log(checkIfPandigital(15234)); // true
+console.log(checkIfPandigital(333)); // false
+console.log(checkIfPandigital(0)); // false
+console.log(checkIfPandigital(987654321)); // true
+
