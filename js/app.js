@@ -151,7 +151,21 @@ const chessboardOfAnySize = (size) => {
 	return chessboard;
 };
 
-console.log(chessboardOfAnySize(7));
+console.log(chessboardOfAnySize(4));
 console.log(chessboardOfAnySize(8));
 console.log(chessboardOfAnySize(10));
 console.log(chessboardOfAnySize(11));
+
+// 8. Variable number of arguments
+// Modify calculate above so that it continues to work as specified in question 3, but also lets a user get the square root of a number by specifying only 2 parameters: the number they want the square root of as the first parameter, and “sqrt” as the second parameter.
+
+const calculate2 = (string, num1, num2 = 0) => {
+	if (string === 'add') return num1 + num2;
+	if (string === 'sub') return num1 - num2;
+	if (string === 'mult') return num1 * num2;
+	if (string === 'div') return num1 / num2;
+	if (string === 'exp') return num1 ** num2;
+	if (string === 'sqrt') return Math.sqrt(num1);
+};
+
+console.log(calculate2('sqrt', 25));
