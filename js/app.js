@@ -139,7 +139,7 @@ const chessboardOfAnySize = (size) => {
 	let chessboard = '';
 	for (let i = 0; i < size; i++) {
 		if (i % 2 === 0 && size % 2 === 1) {
-			chessboard += `${line1.repeat(Math.floor(size / 2))} \n`;
+		  chessboard += `${line1.repeat(Math.floor(size / 2))} \n`;
 		} else if (i % 2 === 0) {
 			chessboard += `${line1.repeat(size / 2)}\n`;
 		} else if (i % 2 === 1 && size % 2 === 1) {
