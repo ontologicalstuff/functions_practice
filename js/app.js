@@ -76,3 +76,82 @@ console.log(checkIfPandigital(333)); // false
 console.log(checkIfPandigital(0)); // false
 console.log(checkIfPandigital(987654321)); // true
 
+// 5. printGreeting v2.0
+// There is a very rudimentary JavaScript function for receiving user input called prompt().
+
+// Usage:
+
+//     const userInput = prompt("Please enter some input");
+// userInput is now whatever the user entered.
+
+// There is another rudimentary JavaScript function for displaying text called alert(). You probably have heard of it. It takes a string as a parameter. Read about it on MDN.
+
+// Let’s revisit printGreeting.
+
+// First get the userInput as above. Then write a function called printGreeting2 with a parameter name that returns a greeting with the argument interpolated into the greeting as before, but this time use the alert function to display the greeting to the user.
+
+const userInput = prompt('Please enter your name', '');
+
+const printGreeting2 = (input) => {
+  return alert(`Hello there, ${input}`)
+}
+
+console.log(printGreeting2(userInput));
+
+// ## Hungry for more?
+
+// ### 6. Functions + loops: a special partnership
+
+// Write a function that, when called (“call” = “invoke”) creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space (a “white square”) or a `#` character (representing a black square). Hence, the characters should form a chessboard.
+
+// Calling your function should print something like this:
+//  # # # #
+// # # # #
+//  # # # #
+// # # # #
+//  # # # #
+// # # # #
+//  # # # #
+// # # # #
+
+const chessboard = () => {
+    let line1 = ' # # # #\n';
+    let line2 = '# # # #\n';
+    let chessboard = '';
+    for (let i = 0; i < 8; i++) {
+        if (i % 2 === 0) chessboard += line1;
+        if (i % 2 === 1) chessboard += line2;
+    }
+    return chessboard;
+}
+
+console.log(chessboard());
+
+// ### 7. Modify it to make any size grid.
+
+// When you have a function that generates this pattern, modify it to take a parameter `size`. Make the function work for any size, outputting a properly formatted grid of the given width and height. If it helps you to have this set. The very first square should always be white.
+
+// Remember to give it a nice **semantic** name
+
+const chessboardOfAnySize = (size) => {
+	let line1 = ' #';
+	let line2 = '# ';
+	let chessboard = '';
+	for (let i = 0; i < size; i++) {
+		if (i % 2 === 0 && size % 2 === 1) {
+			chessboard += `${line1.repeat(Math.floor(size / 2))} \n`;
+		} else if (i % 2 === 0) {
+			chessboard += `${line1.repeat(size / 2)}\n`;
+		} else if (i % 2 === 1 && size % 2 === 1) {
+			chessboard += `${line2.repeat(Math.floor(size / 2))}#\n`;
+		} else if (i % 2 === 1) {
+			chessboard += `${line2.repeat(size / 2)}\n`;
+		}
+	}
+	return chessboard;
+};
+
+console.log(chessboardOfAnySize(7));
+console.log(chessboardOfAnySize(8));
+console.log(chessboardOfAnySize(10));
+console.log(chessboardOfAnySize(11));
