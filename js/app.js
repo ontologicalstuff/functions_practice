@@ -66,7 +66,7 @@ console.log(calculate(4, 3, "exp"));// => 64
 
 function checkIfPandigital(nums) {
 	nums = nums.toString().split('');
-	if (nums.includes('0')) return false;
+	if (nums.includes('0') || !nums.includes('1')) return false;
 	const newArr = Array.from(new Set(nums));
 	return newArr.length === nums.length;
 }
