@@ -65,8 +65,8 @@ console.log(calculate(4, 3, "exp"));// => 64
 // Write a function that checks if a number is 1-to-n pandigital.
 
 function checkIfPandigital(nums) {
-	if (nums === 0) return false;
-	nums = nums.includes('0').split('');
+	nums = nums.toString().split('');
+	if (nums.includes('0')) return false;
 	const newArr = Array.from(new Set(nums));
 	return newArr.length === nums.length;
 }
